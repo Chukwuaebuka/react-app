@@ -9,9 +9,18 @@ const App = () => {
     "Japan",
     "China",
   ];
+
+  const handleSelectItem = (item: string): void => {
+    console.log(item);
+  };
+
   return (
     <div>
-      <ListGroup items={items} heading="Countries" />
+      <ListGroup
+        items={items}
+        heading="Countries"
+        onSelectItem={handleSelectItem}
+      />
     </div>
   );
 };
