@@ -1,14 +1,15 @@
-import Like from "./components/Like";
+import { useState } from "react";
 
 const App = () => {
+  const [bugs, setBugs] = useState([
+    { id: 1, title: "Bug 1", fixed: false },
+    { id: 2, title: "Bug 2", fixed: false },
+  ]);
+
   const handleClick = () => {
-    console.log("Clicked");
+    setBugs(bugs.map((bug) => (bug.id === 1 ? { ...bug, fixed: true } : bug)));
   };
 
-  return (
-    <div>
-      <Like onClick={handleClick} />
-    </div>
-  );
+  return <div></div>;
 };
 export default App;
