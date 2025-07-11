@@ -1,11 +1,13 @@
-import Button from "./components/Button/Button";
+import Like from "./components/Like";
 
 const App = () => {
+  const handleClick = () => {
+    console.log("Clicked");
+  };
+
   return (
     <div>
-      <Button color="secondary" onClick={() => {}}>
-        My Button
-      </Button>
+      <Like onClick={handleClick} />
     </div>
   );
 };
