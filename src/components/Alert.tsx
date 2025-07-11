@@ -5,7 +5,7 @@ interface Props {
   onClose: () => void;
 }
 
-const Alert = ({ children, onClose: onClick }: Props) => {
+const Alert = ({ children, onClose }: Props) => {
   return (
     <div className="alert alert-warning alert-dismissible" role="alert">
       {children}
@@ -14,7 +14,7 @@ const Alert = ({ children, onClose: onClick }: Props) => {
         className="btn-close"
         data-bs-dismiss="alert"
         aria-label="Close"
-        onClick={onClick}
+        onClick={onClose}
       ></button>
     </div>
   );
