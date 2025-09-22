@@ -1,36 +1,22 @@
-import { useState } from "react";
+import ExpandableText from "./components/ExpandableText";
 
 const App = () => {
-  const [cart, setCart] = useState({
-    discount: 0.1,
-    items: [
-      { id: 1, title: "Product 1", quantity: 1 },
-      { id: 2, title: "Product 2", quantity: 1 },
-    ],
-  });
-
-  const handleClick = () => {
-    setCart({
-      ...cart,
-      items: cart.items.map((item) =>
-        item.id === 1 ? { ...item, quantity: item.quantity + 1 } : item
-      ),
-    });
-  };
-
   return (
     <>
-      <h1>{}</h1>
-      <h2></h2>
-      <ul>
-        {cart.items.map((item) => (
-          <li>
-            <p>Item name: {item.title}</p>
-            <p>Quantity: {item.quantity}</p>
-          </li>
-        ))}
-      </ul>
-      <button onClick={handleClick}>Click me</button>
+      <ExpandableText>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur
+        ipsum, itaque, hic, incidunt velit esse voluptas eaque quam sed
+        dignissimos distinctio? Eaque iste porro incidunt saepe voluptatum
+        mollitia quam soluta officia molestias animi illo ut ex aspernatur,
+        illum repellendus. At deserunt necessitatibus blanditiis! Quia molestiae
+        ut voluptatem mollitia quasi molestias doloremque ab. Aut dicta nam
+        harum unde fugiat reiciendis ea dolores ipsum, voluptates vel inventore
+        delectus quos explicabo sequi nostrum, possimus voluptate alias ullam
+        temporibus tempora blanditiis, consectetur voluptas! Facilis facere
+        voluptatem aut ad, quos aliquid iusto labore excepturi veritatis
+        consequatur officiis illum hic. Provident unde porro alias? Inventore,
+        commodi.
+      </ExpandableText>
     </>
   );
 };
