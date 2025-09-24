@@ -19,11 +19,16 @@ const schema = z.object({
 
 type ExpenseFormData = z.infer<typeof schema>;
 
-const ExpenseForm = () => {
+interface Props {
+  onSubmit: (data: ExpenseFormData) => void;
+}
+
+const ExpenseForm = ({ onSubmit }: Props) => {
   const {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm<ExpenseFormData>({
     resolver: zodResolver(schema),
   });
@@ -31,7 +36,8 @@ const ExpenseForm = () => {
   return (
     <form
       onSubmit={handleSubmit((data) => {
-        console.log(data);
+        onSubmit(data);
+        reset();
       })}
     >
       <div className="mb-3">
